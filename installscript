@@ -3,7 +3,6 @@
 # Hide 'last login' line when starting a new terminal session
 touch $HOME/.hushlogin
 
-# Install oh-my-zsh
 echo 'Install oh-my-zsh'
 echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
@@ -17,3 +16,9 @@ git config --global core.excludesfile $HOME/.global-gitignore
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/kenton.zsh-theme $HOME/.oh-my-zsh/themes/kenton.zsh-theme
+
+echo 'Configure npm'
+echo '-------------'
+# Create a directory for global packages and tell npm where to store globally installed packages
+mkdir "${HOME}/.npm-packages"
+npm config set prefix "${HOME}/.npm-packages"
