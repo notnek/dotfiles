@@ -37,3 +37,87 @@ fi
 php composer-setup.php #--version=1
 rm composer-setup.php
 mv composer.phar /usr/local/bin/composer
+
+echo 'Install homebrew'
+echo '----------------'
+echo install homebrew
+sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+echo 'Install node'
+echo '------------'
+brew install node@14
+
+echo 'Install wget'
+echo '------------'
+brew install wget --overwrite
+
+echo 'Install httpie'
+echo '--------------'
+brew install httpie
+
+echo 'Install brew-cask'
+echo '-----------------'
+brew tap caskroom/cask
+brew install brew-cask
+
+echo 'Install some nice quicklook plugins'
+echo '-----------------------------------'
+brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webp-quicklook suspicious-package
+
+echo 'Install php'
+echo '-----------'
+brew install php@7.4
+brew install php@8.0
+
+echo 'Install imagemagick'
+echo '-------------------'
+brew install imagemagick
+
+echo 'Install imagick'
+echo '---------------'
+pecl install imagick
+
+echo 'Install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
+
+echo 'Install docker desktop'
+echo '---------------------'
+brew install --cask docker
+
+echo 'Install takeout'
+echo '---------------------'
+composer global require tightenco/takeout
+
+echo 'Install mysql'
+echo '---------------------'
+takeout enable mysql --default
+
+echo 'Install redis'
+echo '---------------------'
+takeout enable redis --default
+
+echo 'Install meilisearch'
+echo '---------------------'
+takeout enable meilisearch --default
+
+echo 'Install mailhog'
+echo '---------------------'
+takeout enable mailhog --default
+valet proxy mailhog http://127.0.0.1:8025
+
+echo 'Install rabbitmq'
+echo '---------------------'
+takeout enable rabbitmq --default
+
+echo 'Install yarn'
+echo '------------'
+brew install yarn
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'
+echo 'All done!'
+
+echo '++++++++++++++++++++++++++++++'
