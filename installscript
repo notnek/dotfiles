@@ -17,6 +17,16 @@ rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/kenton.zsh-theme $HOME/.oh-my-zsh/themes/kenton.zsh-theme
 
+echo 'Install NVM'
+echo '-----------'
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.zshrc
+
+echo 'Install Node'
+echo '------------'
+nvm install node
+nvm install node@14
+
 echo 'Configure npm'
 echo '-------------'
 # Create a directory for global packages and tell npm where to store globally installed packages
@@ -44,31 +54,21 @@ echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo 'Install node'
-echo '------------'
-brew install node@14
-
 echo 'Install wget'
 echo '------------'
 brew install wget --overwrite
-
-echo 'Install httpie'
-echo '--------------'
-brew install httpie
 
 echo 'Install brew-cask'
 echo '-----------------'
 brew tap caskroom/cask
 brew install brew-cask
 
-echo 'Install some nice quicklook plugins'
-echo '-----------------------------------'
-brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip webp-quicklook suspicious-package
 
 echo 'Install php'
 echo '-----------'
 brew install php@7.4
 brew install php@8.0
+brew install php@8.1
 
 echo 'Install imagemagick'
 echo '-------------------'
@@ -82,6 +82,11 @@ echo 'Install laravel valet'
 echo '---------------------'
 composer global require laravel/valet
 valet install
+
+echo 'Install PHP Monitor'
+echo '-------------------'
+brew tap nicoverbruggen/homebrew-cask
+brew install --cask phpmon
 
 echo 'Install docker desktop'
 echo '---------------------'
@@ -99,10 +104,6 @@ echo 'Install redis'
 echo '---------------------'
 takeout enable redis --default
 
-echo 'Install meilisearch'
-echo '---------------------'
-takeout enable meilisearch --default
-
 echo 'Install mailhog'
 echo '---------------------'
 takeout enable mailhog --default
@@ -119,5 +120,4 @@ brew install yarn
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
-
 echo '++++++++++++++++++++++++++++++'
