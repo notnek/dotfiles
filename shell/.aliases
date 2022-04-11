@@ -9,6 +9,9 @@ alias hostfile="sudo nano /etc/hosts"
 alias mysqladm='mysql -u root'
 
 # PHP
+alias php="valet php"
+alias composer="valet composer"
+alias which-php="valet which-php"
 alias pest="vendor/bin/pest"
 alias phpunit="vendor/bin/phpunit"
 alias a="php artisan"
