@@ -51,11 +51,27 @@ brew install brew-cask
 echo 'Install php'
 echo '-----------'
 brew tap shivammathur/php
+
 brew install shivammathur/php/php@7.2
+brew link --overwrite --force php@7.2
+pecl install imagick
+pecl install redis
+
+
 brew install shivammathur/php/php@7.4
+brew link --overwrite --force php@7.4
+pecl install imagick
+pecl install redis
+
 brew install shivammathur/php/php@8.0
+brew link --overwrite --force php@8.0
+pecl install imagick
+pecl install redis
+
 brew install shivammathur/php/php@8.1
 brew link --overwrite --force php@8.1
+pecl install imagick
+pecl install redis
 
 echo 'Install composer'
 echo '----------------'
@@ -75,7 +91,6 @@ mv composer.phar /usr/local/bin/composer
 echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
-pecl install imagick
 
 echo 'Install laravel valet'
 echo '---------------------'
@@ -102,7 +117,6 @@ takeout enable mysql --default
 echo 'Install redis'
 echo '---------------------'
 takeout enable redis --default
-pecl install redis
 
 echo 'Install mailhog'
 echo '---------------------'
