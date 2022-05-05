@@ -113,6 +113,14 @@ echo 'Install rabbitmq'
 echo '---------------------'
 takeout enable rabbitmq --default
 
+echo 'Install elasticsearch'
+echo '---------------------'
+takeout enable elasticsearch --default
+
+echo 'Install meilisearch'
+echo '---------------------'
+takeout enable meilisearch --default
+
 echo 'Install yarn'
 echo '------------'
 brew install yarn
