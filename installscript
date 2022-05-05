@@ -33,21 +33,6 @@ echo '-------------'
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
-echo 'Install composer'
-echo '----------------'
-EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
-if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
-then
-    >&2 echo 'ERROR: Invalid installer checksum'
-    rm composer-setup.php
-    exit 1
-fi
-php composer-setup.php #--version=1
-rm composer-setup.php
-mv composer.phar /usr/local/bin/composer
-
 echo 'Install homebrew'
 echo '----------------'
 echo install homebrew
@@ -63,19 +48,33 @@ echo '-----------------'
 brew tap caskroom/cask
 brew install brew-cask
 
-
 echo 'Install php'
 echo '-----------'
-brew install php@7.4
-brew install php@8.0
-brew install php@8.1
+brew tap shivammathur/php
+brew install shivammathur/php/php@7.2
+brew install shivammathur/php/php@7.4
+brew install shivammathur/php/php@8.0
+brew install shivammathur/php/php@8.1
+brew link --overwrite --force php@8.1
+
+echo 'Install composer'
+echo '----------------'
+EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_COMPOSER_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+if [ "$EXPECTED_COMPOSER_CHECKSUM" != "$ACTUAL_COMPOSER_CHECKSUM" ]
+then
+    >&2 echo 'ERROR: Invalid installer checksum'
+    rm composer-setup.php
+    exit 1
+fi
+php composer-setup.php #--version=1
+rm composer-setup.php
+mv composer.phar /usr/local/bin/composer
 
 echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
-
-echo 'Install imagick'
-echo '---------------'
 pecl install imagick
 
 echo 'Install laravel valet'
@@ -103,6 +102,7 @@ takeout enable mysql --default
 echo 'Install redis'
 echo '---------------------'
 takeout enable redis --default
+pecl install redis
 
 echo 'Install mailhog'
 echo '---------------------'
