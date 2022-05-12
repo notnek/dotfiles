@@ -93,11 +93,6 @@ echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
 
-echo 'Install laravel valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
-
 echo 'Install PHP Monitor'
 echo '-------------------'
 brew tap nicoverbruggen/homebrew-cask
@@ -135,6 +130,11 @@ takeout enable elasticsearch --default
 echo 'Install meilisearch'
 echo '---------------------'
 takeout enable meilisearch --default
+
+echo 'Install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
 
 echo 'Install yarn'
 echo '------------'
