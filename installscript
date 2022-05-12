@@ -26,7 +26,7 @@ echo 'Install Node'
 echo '------------'
 nvm install node
 nvm install lts/fermium
-nvm default lts/fermium
+nvm alias default lts/fermium
 
 echo 'Configure npm'
 echo '-------------'
