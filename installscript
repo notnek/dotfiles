@@ -55,24 +55,24 @@ brew tap shivammathur/php
 
 brew install shivammathur/php/php@7.2
 brew link --overwrite --force php@7.2
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 
 brew install shivammathur/php/php@7.4
 brew link --overwrite --force php@7.4
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 brew install shivammathur/php/php@8.0
 brew link --overwrite --force php@8.0
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 brew install shivammathur/php/php@8.1
 brew link --overwrite --force php@8.1
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 echo 'Install composer'
 echo '----------------'
