@@ -25,7 +25,7 @@ source ~/.zshrc
 echo 'Install Node'
 echo '------------'
 nvm install node
-nvm install node@14
+nvm install lts/fermium
 
 echo 'Configure npm'
 echo '-------------'
@@ -45,7 +45,7 @@ brew install wget --overwrite
 
 echo 'Install brew-cask'
 echo '-----------------'
-brew tap caskroom/cask
+brew tap homebrew/cask
 brew install brew-cask
 
 echo 'Install php'
