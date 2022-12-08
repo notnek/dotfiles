@@ -72,6 +72,15 @@ brew link --overwrite --force php@8.1
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
+brew install shivammathur/php/php@8.2
+brew link --overwrite --force php@8.2
+echo '' | pecl install imagick
+echo '' | pecl install redis
+
+echo 'Set current PHP to 8.1'
+echo '----------------------'
+brew link --overwrite --force php@8.1
+
 echo 'Install composer'
 echo '----------------'
 EXPECTED_COMPOSER_CHECKSUM="$(curl https://composer.github.io/installer.sig)"
