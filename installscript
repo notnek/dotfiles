@@ -36,7 +36,6 @@ npm config set prefix "${HOME}/.npm-packages"
 
 echo 'Install homebrew'
 echo '----------------'
-echo install homebrew
 sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -55,24 +54,32 @@ brew tap shivammathur/php
 
 brew install shivammathur/php/php@7.2
 brew link --overwrite --force php@7.2
-pecl install imagick
-pecl install redis
-
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 brew install shivammathur/php/php@7.4
 brew link --overwrite --force php@7.4
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 brew install shivammathur/php/php@8.0
 brew link --overwrite --force php@8.0
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
 
 brew install shivammathur/php/php@8.1
 brew link --overwrite --force php@8.1
-pecl install imagick
-pecl install redis
+echo '' | pecl install imagick
+echo '' | pecl install redis
+
+brew install shivammathur/php/php@8.2
+brew link --overwrite --force php@8.2
+echo '' | pecl install imagick
+echo '' | pecl install redis
+
+echo 'Set current PHP to 8.1'
+echo '----------------------'
+brew link --overwrite --force php@8.1
 
 echo 'Install composer'
 echo '----------------'
@@ -92,11 +99,6 @@ mv composer.phar /usr/local/bin/composer
 echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
-
-echo 'Install laravel valet'
-echo '---------------------'
-composer global require laravel/valet
-valet install
 
 echo 'Install PHP Monitor'
 echo '-------------------'
@@ -122,7 +124,6 @@ takeout enable redis --default
 echo 'Install mailhog'
 echo '---------------------'
 takeout enable mailhog --default
-valet proxy mailhog http://127.0.0.1:8025
 
 echo 'Install rabbitmq'
 echo '---------------------'
@@ -136,9 +137,22 @@ echo 'Install meilisearch'
 echo '---------------------'
 takeout enable meilisearch --default
 
+echo 'Install laravel valet'
+echo '---------------------'
+composer global require laravel/valet
+valet install
+
+echo 'Configure proxy for mailhog through valet'
+echo '-----------------------------------------'
+valet proxy mailhog http://127.0.0.1:8025
+
 echo 'Install yarn'
 echo '------------'
 brew install yarn
+
+echo 'Install Deployer'
+echo '----------------'
+composer global require deployer/deployer
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'

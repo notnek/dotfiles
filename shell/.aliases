@@ -9,6 +9,7 @@ alias hostfile="sudo nano /etc/hosts"
 alias mysqladm='mysql -u root'
 
 # PHP
+alias dep="~/.composer/vendor/bin/dep"
 alias php="valet php"
 alias composer="valet composer"
 alias which-php="valet which-php"
@@ -47,10 +48,6 @@ alias l="ls -laF"
 
 # PhpStorm
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-
-# PHP
-alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
-alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
