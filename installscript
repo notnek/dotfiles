@@ -124,7 +124,6 @@ takeout enable redis --default
 echo 'Install mailhog'
 echo '---------------------'
 takeout enable mailhog --default
-valet proxy mailhog http://127.0.0.1:8025
 
 echo 'Install rabbitmq'
 echo '---------------------'
@@ -142,6 +141,10 @@ echo 'Install laravel valet'
 echo '---------------------'
 composer global require laravel/valet
 valet install
+
+echo 'Configure proxy for mailhog through valet'
+echo '-----------------------------------------'
+valet proxy mailhog http://127.0.0.1:8025
 
 echo 'Install yarn'
 echo '------------'
