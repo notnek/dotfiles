@@ -25,8 +25,8 @@ source ~/.zshrc
 echo 'Install Node'
 echo '------------'
 nvm install node
-nvm install lts/fermium
-nvm alias default lts/fermium
+nvm install lts/hydrogen
+nvm alias default lts/hydrogen
 
 echo 'Configure npm'
 echo '-------------'
