@@ -25,8 +25,8 @@ source ~/.zshrc
 echo 'Install Node'
 echo '------------'
 nvm install node
-nvm install lts/fermium
-nvm alias default lts/fermium
+nvm install lts/hydrogen
+nvm alias default lts/hydrogen
 
 echo 'Configure npm'
 echo '-------------'
@@ -52,34 +52,34 @@ echo 'Install php'
 echo '-----------'
 brew tap shivammathur/php
 
-brew install shivammathur/php/php@7.2
-brew link --overwrite --force php@7.2
+brew install -s shivammathur/php/php@7.2
+brew link --overwrite --force shivammathur/php/php@7.2
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
-brew install shivammathur/php/php@7.4
-brew link --overwrite --force php@7.4
+brew install -s shivammathur/php/php@7.4
+brew link --overwrite --force shivammathur/php/php@7.4
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
-brew install shivammathur/php/php@8.0
-brew link --overwrite --force php@8.0
+brew install -s shivammathur/php/php@8.0
+brew link --overwrite --force shivammathur/php/php@8.0
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
-brew install shivammathur/php/php@8.1
-brew link --overwrite --force php@8.1
+brew install -s shivammathur/php/php@8.1
+brew link --overwrite --force shivammathur/php/php@8.1
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
-brew install shivammathur/php/php@8.2
-brew link --overwrite --force php@8.2
+brew install -s shivammathur/php/php@8.2
+brew link --overwrite --force shivammathur/php/php@8.2
 echo '' | pecl install imagick
 echo '' | pecl install redis
 
 echo 'Set current PHP to 8.1'
 echo '----------------------'
-brew link --overwrite --force php@8.1
+brew link --overwrite --force shivammathur/php/php@8.1
 
 echo 'Install composer'
 echo '----------------'
