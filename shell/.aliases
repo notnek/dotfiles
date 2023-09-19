@@ -49,6 +49,9 @@ alias l="ls -laF"
 # PhpStorm
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 
+# RubyMine
+alias rubymine='open -a /Applications/RubyMine.app "`pwd`"'
+
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
 
