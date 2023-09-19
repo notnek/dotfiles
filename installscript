@@ -72,6 +72,18 @@ echo '-------------'
 mkdir "${HOME}/.npm-packages"
 npm config set prefix "${HOME}/.npm-packages"
 
+echo 'Configure git'
+echo '-------------'
+git config --global color.ui true
+git config --global user.name "Kenton Glass"
+git config --global user.email "git@kenton.glass"
+git config --global push.default current
+git config --global push.autosetupremote true
+git config --global init.defaultbranch main
+
+echo 'Generate a new SSH key'
+ssh-keygen -t ed25519 -C "git@kenton.glass"
+
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
