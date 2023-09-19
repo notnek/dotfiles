@@ -10,10 +10,9 @@ alias mysqladm='mysql -u root'
 
 # PHP
 alias dep="~/.composer/vendor/bin/dep"
-alias php="valet php"
-alias composer="valet composer"
-alias which-php="valet which-php"
-alias dep="valet php ~/.composer/vendor/bin/dep"
+alias php="herd php"
+alias composer="herd composer"
+alias which-php="herd which-php"
 alias pest="vendor/bin/pest"
 alias phpunit="vendor/bin/phpunit"
 alias a="php artisan"
