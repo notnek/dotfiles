@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/misc/oh-my-zsh-custom
 
 # Set name of the theme to load.
-ZSH_THEME="kenton"
+ZSH_THEME="simple"
 
 # Hide username in prompt
 DEFAULT_USER=`whoami`
