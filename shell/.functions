@@ -17,29 +17,9 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-# Start a PHP server from a directory, optionally specifying the port
-# (Requires PHP 5.4.0+.)
-function phpserver() {
-	local port="${1:-4000}"
-	local ip=$(ipconfig getifaddr en0)
-	sleep 2 && open "http://${ip}:${port}/" &
-	php -S "${ip}:${port}"
-}
-
 # All the dig info
 function digit() {
 	dig +nocmd "$1" any +multiline +noall +answer
-}
-
-# Quick tinker, optionally dump
-function tinker()
-{
-  if [ -z "$1" ]
-    then
-       php artisan tinker
-    else
-       php artisan tinker --execute="dd($1);"
-  fi
 }
 
 # Shortcut voor zhs quick-look command
@@ -108,15 +88,6 @@ function opendb () {
 
    echo "Opening ${DB_URL}"
    open $DB_URL
-}
-
-# Execute artisan schedule runs
-function scheduler () {
-    while :; do
-        php artisan schedule:run
-	echo "Sleeping 60 seconds..."
-        sleep 60
-    done
 }
 
 # Silence is golden
