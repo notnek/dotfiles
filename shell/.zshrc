@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/misc/oh-my-zsh-custom
 
 # Set name of the theme to load.
-ZSH_THEME="simple"
+ZSH_THEME="kenton"
 
 # Hide username in prompt
 DEFAULT_USER=`whoami`
@@ -12,7 +12,7 @@ DEFAULT_USER=`whoami`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git composer yarn httpie laravel macos)
+plugins=(git composer yarn httpie laravel macos git-trim ruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,8 +31,5 @@ unset file
 ssh-add -A 2>/dev/null;
 
 # Extra paths
-export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
