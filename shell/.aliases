@@ -8,29 +8,9 @@ alias hostfile="sudo nano /etc/hosts"
 # MySql
 alias mysqladm='mysql -u root'
 
-# PHP
-alias dep="~/.composer/vendor/bin/dep"
-alias php="herd php"
-alias composer="herd composer"
-alias which-php="herd which-php"
-alias pest="vendor/bin/pest"
-alias phpunit="vendor/bin/phpunit"
-alias a="php artisan"
-alias c="composer"
-alias cu="composer update"
-alias cr="composer require"
-alias ci="composer install"
-alias cda="composer dump-autoload -o"
-alias larastan="vendor/bin/phpstan analyse"
-alias mfs='php artisan migrate:fresh --seed'
-alias p="phpunit"
-alias pp="php artisan test --parallel"
-alias pf="phpunit --filter "
-alias d="php artisan dusk"
-alias sail='./vendor/bin/sail'
+# Ruby
 
 # JavaScript
-alias jest="./node_modules/.bin/jest"
 
 # Git
 alias gc="git checkout"
@@ -46,17 +26,11 @@ alias o="open ."
 # List all files colorized in long format
 alias l="ls -laF"
 
-# PhpStorm
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-
 # RubyMine
 alias rubymine='open -a /Applications/RubyMine.app "`pwd`"'
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
-
-# VSCode
-alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
