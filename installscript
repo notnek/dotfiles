@@ -45,14 +45,14 @@ brew install imagemagick
 
 echo 'Download ASDF'
 echo '-------------'
-rm -rf $HOME/.zshrc
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+rm -rf $HOME/.asdf
+git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.13.1
 
 echo 'Install ASDF'
 echo '------------'
-echo '. "$HOME/.asdf/asdf.sh"' >> ~/.zshrc
-echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.zshrc
-echo 'legacy_version_file = yes' >> ~/.asdfrc
+echo '. "$HOME/.asdf/asdf.sh"' >> $HOME/.zshrc
+echo '. "$HOME/.asdf/completions/asdf.bash"' >> $HOME/.zshrc
+echo 'legacy_version_file = yes' >> $HOME/.asdfrc
 exec $SHELL
 
 echo 'Install latest Ruby'
