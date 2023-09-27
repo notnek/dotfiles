@@ -43,13 +43,10 @@ echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
 
-echo 'Download ASDF'
+echo 'Install ASDF'
 echo '-------------'
 rm -rf $HOME/.asdf
 git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch v0.13.1
-
-echo 'Install ASDF'
-echo '------------'
 echo '. "$HOME/.asdf/asdf.sh"' >> $HOME/.zshrc
 echo '. "$HOME/.asdf/completions/asdf.bash"' >> $HOME/.zshrc
 echo 'legacy_version_file = yes' >> $HOME/.asdfrc
