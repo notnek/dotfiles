@@ -53,7 +53,6 @@ echo '------------'
 echo '. "$HOME/.asdf/asdf.sh"' >> $HOME/.zshrc
 echo '. "$HOME/.asdf/completions/asdf.bash"' >> $HOME/.zshrc
 echo 'legacy_version_file = yes' >> $HOME/.asdfrc
-exec $SHELL
 
 echo 'Install latest Ruby'
 echo '-------------------'
