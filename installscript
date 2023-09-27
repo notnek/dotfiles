@@ -45,6 +45,7 @@ brew install imagemagick
 
 echo 'Download ASDF'
 echo '-------------'
+rm -rf $HOME/.zshrc
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 
 echo 'Install ASDF'
@@ -85,9 +86,6 @@ git config --global gt.exclude staging
 echo 'Install git-trim'
 echo '----------------'
 git clone https://github.com/jasonmccreary/git-trim.git $ZSH_CUSTOM/plugins/git-trim
-
-echo 'Generate a new SSH key'
-ssh-keygen -t ed25519 -C "git@kenton.glass"
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
